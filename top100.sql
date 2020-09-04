@@ -21,9 +21,9 @@ select peliculas.pelicula, reparto.nombre from peliculas INNER JOIN reparto ON p
 -- listar top 10 directores, no me queda muy claro que habia que hacer. 
 select director, count(pelicula) AS peliculas from peliculas where director IN(select director from peliculas limit 10) group by director order by min(peliculas.id);
 
-
--- cantidad de directores
-select count(distinct director) AS cantidad_directores from peliculas;
+ 
+-- cantidad de actores 
+select count(distinct nombre) AS cantidad_actores from reparto;
 
 -- peliculas enrte 1990 y 1990
 select peliculas from peliculas where año_estreno > 1889 and año_estreno < 2000 ORDER BY pelicula;
